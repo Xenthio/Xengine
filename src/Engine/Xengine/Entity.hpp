@@ -13,7 +13,9 @@
 #include <glm/gtx/quaternion.hpp> 
 
 class Entity {
+public:
     glm::vec3 Position;
     glm::quat Rotation;
+    
 };
 #endif /* ModelEntity_hpp */

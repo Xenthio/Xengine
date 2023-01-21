@@ -14,6 +14,7 @@
 		C9FF9EC6297BD215001538FB /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9EC4297BD215001538FB /* Model.cpp */; };
 		C9FF9EC9297BD8AF001538FB /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9EC7297BD8AF001538FB /* Entity.cpp */; };
 		C9FF9ECC297BDA02001538FB /* ModelEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ECA297BDA02001538FB /* ModelEntity.cpp */; };
+		C9FF9ED0297BE792001538FB /* Materials.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ECE297BE792001538FB /* Materials.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,8 @@
 		C9FF9EC8297BD8AF001538FB /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
 		C9FF9ECA297BDA02001538FB /* ModelEntity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ModelEntity.cpp; sourceTree = "<group>"; };
 		C9FF9ECB297BDA02001538FB /* ModelEntity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ModelEntity.hpp; sourceTree = "<group>"; };
+		C9FF9ECE297BE792001538FB /* Materials.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Materials.cpp; path = src/Engine/Xengine/Materials.cpp; sourceTree = SOURCE_ROOT; };
+		C9FF9ECF297BE792001538FB /* Materials.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Materials.hpp; path = src/Engine/Xengine/Materials.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +90,6 @@
 			children = (
 				C9FF9EC0297BD12D001538FB /* Renderer.cpp */,
 				C9FF9EC1297BD12D001538FB /* Renderer.hpp */,
-				C9FF9EC4297BD215001538FB /* Model.cpp */,
-				C9FF9EC5297BD215001538FB /* Model.hpp */,
-				C9FF9EC7297BD8AF001538FB /* Entity.cpp */,
-				C9FF9EC8297BD8AF001538FB /* Entity.hpp */,
-				C9FF9ECA297BDA02001538FB /* ModelEntity.cpp */,
-				C9FF9ECB297BDA02001538FB /* ModelEntity.hpp */,
 			);
 			name = Render;
 			path = ../Engine/Render;
@@ -101,11 +98,27 @@
 		C9FF9EC3297BD1AA001538FB /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				C9FF9ECD297BE61B001538FB /* Xengine */,
 				C9FF9EB5297BC5DB001538FB /* main.cpp */,
 				C9FF9EBF297BCF2A001538FB /* Render */,
 			);
 			name = Engine;
 			path = src/engine;
+			sourceTree = "<group>";
+		};
+		C9FF9ECD297BE61B001538FB /* Xengine */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF9ECB297BDA02001538FB /* ModelEntity.hpp */,
+				C9FF9ECA297BDA02001538FB /* ModelEntity.cpp */,
+				C9FF9EC8297BD8AF001538FB /* Entity.hpp */,
+				C9FF9EC7297BD8AF001538FB /* Entity.cpp */,
+				C9FF9EC5297BD215001538FB /* Model.hpp */,
+				C9FF9EC4297BD215001538FB /* Model.cpp */,
+				C9FF9ECE297BE792001538FB /* Materials.cpp */,
+				C9FF9ECF297BE792001538FB /* Materials.hpp */,
+			);
+			path = Xengine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +180,7 @@
 			files = (
 				C9FF9ECC297BDA02001538FB /* ModelEntity.cpp in Sources */,
 				C9FF9EC6297BD215001538FB /* Model.cpp in Sources */,
+				C9FF9ED0297BE792001538FB /* Materials.cpp in Sources */,
 				C9FF9EC2297BD12D001538FB /* Renderer.cpp in Sources */,
 				C9FF9EC9297BD8AF001538FB /* Entity.cpp in Sources */,
 				C9FF9EB6297BC5DB001538FB /* main.cpp in Sources */,

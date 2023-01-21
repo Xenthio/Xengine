@@ -13,6 +13,7 @@
 #include "Model.hpp"
 
 class ModelEntity : Entity {
+public:
     Model Model;
 };
 

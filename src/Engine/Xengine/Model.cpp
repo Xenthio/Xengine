@@ -6,3 +6,8 @@
 //
 
 #include "Model.hpp"
+ 
+void Model::Load(string File)
+{
+    // Return a model from a file
+}

@@ -3,8 +3,7 @@
 //  Xengine
 //
 //  Created by Xenthio on 21/1/2023.
-//
-
+// 
 #ifndef Mesh_hpp
 #define Mesh_hpp
 
@@ -26,6 +25,7 @@
 using std::vector;
 
 #include <glm/vec3.hpp>
+#include "Materials.hpp"
 
 // Struct to hold mesh loaded into OpenGL
  struct Mesh
@@ -39,18 +39,13 @@ using std::vector;
      bool hasUvs = false;
  };
  
- // Struct to hold material loaded into OpenGL
- struct Material
- {
-     glm::vec3 diffuseColor;
-     GLuint diffuseTexture;
-     bool hasDiffuseTexture;
- };
- 
-struct Model
- {
- std::vector<Mesh*> meshes;
- std::vector<Material*> materials;
- };
+class Model
+{
+    Mesh Mesh;
+    std::vector<Material*> Materials;
+    Model() {     // Constructor
+        Mesh = 
+    }
+};
 
 #endif /* Mesh_hpp */
