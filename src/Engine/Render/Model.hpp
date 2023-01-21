@@ -18,10 +18,15 @@
 #include <gl/glew.h>
 #include <SDL_opengl.h>
 #include <gl/glu.h>
-#include <vector>
 
 #endif
 #include <stdio.h>
+
+#include <vector>
+using std::vector;
+
+#include <glm/vec3.hpp>
+
 // Struct to hold mesh loaded into OpenGL
  struct Mesh
  {
