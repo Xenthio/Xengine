@@ -43,9 +43,11 @@ class Model
 {
     Mesh Mesh;
     std::vector<Material*> Materials;
-    Model() {     // Constructor
-        Mesh = 
+    Model(struct Mesh mesh) {     // Constructor
+        Mesh = mesh;
     }
+    
+    void Load(std::string File);
 };
 
 #endif /* Mesh_hpp */
