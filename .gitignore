@@ -404,3 +404,4 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 Xengine.xcodeproj/project.xcworkspace/xcuserdata/xenthio.xcuserdatad/UserInterfaceState.xcuserstate
+vcpkg_installed/
