@@ -30,8 +30,21 @@ int main ()
     assert(Window);
     SDL_GLContext Context = SDL_GL_CreateContext(Window);
     
+    glewExperimental = GL_TRUE;
+    glewInit();
+    
     b32 Running = 1;
     b32 FullScreen = 0;
+    
+    GLuint VertexArrayObject = 1;
+    glGenVertexArrays(1, &VertexArrayObject);
+    glBindVertexArray(VertexArrayObject);
+    
+    GLuint VertexBufferObject = 1;
+    glGenBuffers(1, &VertexBufferObject);
+    glBindBuffer(GL_ARRAY_BUFFER,VertexBufferObject);
+    
+    
     while (Running)
     {
         SDL_Event Event;
@@ -66,8 +79,10 @@ int main ()
         }
         
         glViewport(0, 0, DefaultWindowWidth, DefaultWindowHeight);
-        DoRender();
         glClear(GL_COLOR_BUFFER_BIT);
+        glBindVertexArray(VertexArrayObject);
+        DoRender();
+        
         
         SDL_GL_SwapWindow(Window);
     }

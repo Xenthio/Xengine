@@ -15,6 +15,7 @@
 		C9FF9EC9297BD8AF001538FB /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9EC7297BD8AF001538FB /* Entity.cpp */; };
 		C9FF9ECC297BDA02001538FB /* ModelEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ECA297BDA02001538FB /* ModelEntity.cpp */; };
 		C9FF9ED0297BE792001538FB /* Materials.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ECE297BE792001538FB /* Materials.cpp */; };
+		C9FF9ED3297CA663001538FB /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ED1297CA663001538FB /* Mesh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,10 @@
 		C9FF9ECB297BDA02001538FB /* ModelEntity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ModelEntity.hpp; sourceTree = "<group>"; };
 		C9FF9ECE297BE792001538FB /* Materials.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Materials.cpp; path = src/Engine/Xengine/Materials.cpp; sourceTree = SOURCE_ROOT; };
 		C9FF9ECF297BE792001538FB /* Materials.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Materials.hpp; path = src/Engine/Xengine/Materials.hpp; sourceTree = SOURCE_ROOT; };
+		C9FF9ED1297CA663001538FB /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = src/Engine/Xengine/Mesh.cpp; sourceTree = SOURCE_ROOT; };
+		C9FF9ED2297CA663001538FB /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Mesh.hpp; path = src/Engine/Xengine/Mesh.hpp; sourceTree = SOURCE_ROOT; };
+		C9FF9ED4297CADDD001538FB /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
+		C9FF9ED6297CB1E8001538FB /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,8 @@
 		C9FF9EB7297BC638001538FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9FF9ED6297CB1E8001538FB /* libGLEW.a */,
+				C9FF9ED4297CADDD001538FB /* libGLEW.2.2.0.dylib */,
 				C9FF9EBA297BCA34001538FB /* OpenGL.framework */,
 				C9FF9EB8297BC638001538FB /* SDL2.framework */,
 			);
@@ -117,6 +124,8 @@
 				C9FF9EC4297BD215001538FB /* Model.cpp */,
 				C9FF9ECE297BE792001538FB /* Materials.cpp */,
 				C9FF9ECF297BE792001538FB /* Materials.hpp */,
+				C9FF9ED1297CA663001538FB /* Mesh.cpp */,
+				C9FF9ED2297CA663001538FB /* Mesh.hpp */,
 			);
 			path = Xengine;
 			sourceTree = "<group>";
@@ -181,6 +190,7 @@
 				C9FF9ECC297BDA02001538FB /* ModelEntity.cpp in Sources */,
 				C9FF9EC6297BD215001538FB /* Model.cpp in Sources */,
 				C9FF9ED0297BE792001538FB /* Materials.cpp in Sources */,
+				C9FF9ED3297CA663001538FB /* Mesh.cpp in Sources */,
 				C9FF9EC2297BD12D001538FB /* Renderer.cpp in Sources */,
 				C9FF9EC9297BD8AF001538FB /* Entity.cpp in Sources */,
 				C9FF9EB6297BC5DB001538FB /* main.cpp in Sources */,
@@ -244,7 +254,7 @@
 					/opt/homebrew/Cellar/glew/2.2.0_1/include,
 					/opt/homebrew/Cellar/glm/0.9.9.8/include,
 				);
-				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glew/2.2.0_1/lib;
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glew/2.2.0_1/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -301,7 +311,7 @@
 					/opt/homebrew/Cellar/glew/2.2.0_1/include,
 					/opt/homebrew/Cellar/glm/0.9.9.8/include,
 				);
-				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glew/2.2.0_1/lib;
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glew/2.2.0_1/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -317,6 +327,11 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
+				);
+				OTHER_LDFLAGS = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -329,6 +344,11 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
+				);
+				OTHER_LDFLAGS = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
