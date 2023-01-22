@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9FF9EB6297BC5DB001538FB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9EB5297BC5DB001538FB /* main.cpp */; };
+		C915E22D297CFDE800826B8A /* Xengine.dll in Frameworks */ = {isa = PBXBuildFile; fileRef = C915E22C297CFDE800826B8A /* Xengine.dll */; };
 		C9FF9EB9297BC638001538FB /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FF9EB8297BC638001538FB /* SDL2.framework */; };
 		C9FF9EBB297BCA34001538FB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FF9EBA297BCA34001538FB /* OpenGL.framework */; };
 		C9FF9EC2297BD12D001538FB /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9EC0297BD12D001538FB /* Renderer.cpp */; };
@@ -16,6 +16,8 @@
 		C9FF9ECC297BDA02001538FB /* ModelEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ECA297BDA02001538FB /* ModelEntity.cpp */; };
 		C9FF9ED0297BE792001538FB /* Materials.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ECE297BE792001538FB /* Materials.cpp */; };
 		C9FF9ED3297CA663001538FB /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ED1297CA663001538FB /* Mesh.cpp */; };
+		C9FF9EDB297CBF0F001538FB /* Inputs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9ED9297CBF0F001538FB /* Inputs.cpp */; };
+		C9FF9EEB297CF185001538FB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9FF9EB5297BC5DB001538FB /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C915E22C297CFDE800826B8A /* Xengine.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = Xengine.dll; path = bin/Debug/net7.0/Xengine.dll; sourceTree = "<group>"; };
 		C927C48B297BC54B001DD1DC /* Xengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Xengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FF9EB5297BC5DB001538FB /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C9FF9EB8297BC638001538FB /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -49,6 +52,10 @@
 		C9FF9ED2297CA663001538FB /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Mesh.hpp; path = src/Engine/Xengine/Mesh.hpp; sourceTree = SOURCE_ROOT; };
 		C9FF9ED4297CADDD001538FB /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
 		C9FF9ED6297CB1E8001538FB /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.a; sourceTree = "<group>"; };
+		C9FF9ED9297CBF0F001538FB /* Inputs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Inputs.cpp; path = src/Engine/Render/Inputs.cpp; sourceTree = SOURCE_ROOT; };
+		C9FF9EDA297CBF0F001538FB /* Inputs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Inputs.hpp; path = src/Engine/Render/Inputs.hpp; sourceTree = SOURCE_ROOT; };
+		C9FF9EE6297CF087001538FB /* Main.cs */ = {isa = PBXFileReference; lastKnownFileType = text; name = Main.cs; path = src/engine/Project/Main.cs; sourceTree = SOURCE_ROOT; };
+		C9FF9EF6297CF903001538FB /* CSInterop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CSInterop.h; path = src/Engine/Project/CSInterop.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C915E22D297CFDE800826B8A /* Xengine.dll in Frameworks */,
 				C9FF9EB9297BC638001538FB /* SDL2.framework in Frameworks */,
 				C9FF9EBB297BCA34001538FB /* OpenGL.framework in Frameworks */,
 			);
@@ -84,6 +92,7 @@
 		C9FF9EB7297BC638001538FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C915E22C297CFDE800826B8A /* Xengine.dll */,
 				C9FF9ED6297CB1E8001538FB /* libGLEW.a */,
 				C9FF9ED4297CADDD001538FB /* libGLEW.2.2.0.dylib */,
 				C9FF9EBA297BCA34001538FB /* OpenGL.framework */,
@@ -95,6 +104,8 @@
 		C9FF9EBF297BCF2A001538FB /* Render */ = {
 			isa = PBXGroup;
 			children = (
+				C9FF9ED9297CBF0F001538FB /* Inputs.cpp */,
+				C9FF9EDA297CBF0F001538FB /* Inputs.hpp */,
 				C9FF9EC0297BD12D001538FB /* Renderer.cpp */,
 				C9FF9EC1297BD12D001538FB /* Renderer.hpp */,
 			);
@@ -105,6 +116,7 @@
 		C9FF9EC3297BD1AA001538FB /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				C9FF9EDC297CEEA1001538FB /* Project */,
 				C9FF9ECD297BE61B001538FB /* Xengine */,
 				C9FF9EB5297BC5DB001538FB /* main.cpp */,
 				C9FF9EBF297BCF2A001538FB /* Render */,
@@ -130,7 +142,33 @@
 			path = Xengine;
 			sourceTree = "<group>";
 		};
+		C9FF9EDC297CEEA1001538FB /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF9EE6297CF087001538FB /* Main.cs */,
+				C9FF9EF6297CF903001538FB /* CSInterop.h */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		C9FF9EF7297CF930001538FB /* Project */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = build;
+			buildConfigurationList = C9FF9EF8297CF930001538FB /* Build configuration list for PBXLegacyTarget "Project" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/share/dotnet/dotnet;
+			buildWorkingDirectory = /Users/xenthio/Xengine;
+			dependencies = (
+			);
+			name = Project;
+			passBuildSettingsInEnvironment = 0;
+			productName = Project;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		C927C48A297BC54B001DD1DC /* Xengine */ = {
@@ -162,6 +200,9 @@
 					C927C48A297BC54B001DD1DC = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					C9FF9EF7297CF930001538FB = {
+						CreatedOnToolsVersion = 14.2;
+					};
 				};
 			};
 			buildConfigurationList = C927C486297BC54B001DD1DC /* Build configuration list for PBXProject "Xengine" */;
@@ -178,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				C927C48A297BC54B001DD1DC /* Xengine */,
+				C9FF9EF7297CF930001538FB /* Project */,
 			);
 		};
 /* End PBXProject section */
@@ -193,7 +235,8 @@
 				C9FF9ED3297CA663001538FB /* Mesh.cpp in Sources */,
 				C9FF9EC2297BD12D001538FB /* Renderer.cpp in Sources */,
 				C9FF9EC9297BD8AF001538FB /* Entity.cpp in Sources */,
-				C9FF9EB6297BC5DB001538FB /* main.cpp in Sources */,
+				C9FF9EEB297CF185001538FB /* main.cpp in Sources */,
+				C9FF9EDB297CBF0F001538FB /* Inputs.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +396,31 @@
 			};
 			name = Release;
 		};
+		C9FF9EF9297CF930001538FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C9FF9EFA297CF930001538FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -370,6 +438,15 @@
 			buildConfigurations = (
 				C927C493297BC54B001DD1DC /* Debug */,
 				C927C494297BC54B001DD1DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9FF9EF8297CF930001538FB /* Build configuration list for PBXLegacyTarget "Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FF9EF9297CF930001538FB /* Debug */,
+				C9FF9EFA297CF930001538FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

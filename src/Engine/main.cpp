@@ -11,9 +11,13 @@
 #include <gl/glu.h>
 #endif
 
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 #include <stdio.h>
 #include <string>
 #include "Renderer.hpp"
+#include "Inputs.hpp"
+#include "Project/CSInterop.h"
 
 typedef int32_t i32;
 typedef uint32_t u32;
@@ -22,9 +26,17 @@ typedef int32_t b32;
 #define DefaultWindowWidth 800
 #define DefaultWindowHeight 600
 
+
+
+struct SceneCamera {
+public:
+    glm::vec3 Position;
+    glm::quat Rotation;
+};
+
 int main ()
 {
-    
+    struct SceneCamera Camera = *new struct SceneCamera();
     u32 WindowFlags = SDL_WINDOW_OPENGL;
     SDL_Window *Window = SDL_CreateWindow("Xengine", 0, 0, DefaultWindowWidth, DefaultWindowHeight, WindowFlags);
     assert(Window);
@@ -44,9 +56,13 @@ int main ()
     glGenBuffers(1, &VertexBufferObject);
     glBindBuffer(GL_ARRAY_BUFFER,VertexBufferObject);
     
-    
     while (Running)
     {
+        bool a = CSMain::OnFrame();
+        if (a == true) {
+            
+            printf("real");
+        }
         SDL_Event Event;
         while (SDL_PollEvent(&Event))
         {
@@ -77,12 +93,41 @@ int main ()
                 Running = 0;
             }
         }
+        // START MOVE TO C#
+        
+        float speed = 0.1f;
+        const Uint8 *state = SDL_GetKeyboardState(NULL);
+            if (state[SDL_SCANCODE_W]) {
+                Camera.Position.x += speed;
+            }
+            if (state[SDL_SCANCODE_S]) {
+                Camera.Position.x -= speed;
+            }
+            if (state[SDL_SCANCODE_A]) {
+                Camera.Position.y += speed;
+            }
+            if (state[SDL_SCANCODE_D]) {
+                Camera.Position.y -= speed;
+            }
+        // END MOVE TO C#
+        DoInputs();
         
         glViewport(0, 0, DefaultWindowWidth, DefaultWindowHeight);
         glClear(GL_COLOR_BUFFER_BIT);
-        glBindVertexArray(VertexArrayObject);
+        glBindBuffer(GL_ARRAY_BUFFER,VertexBufferObject);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+        glEnableVertexAttribArray(0);
+        
+            glMatrixMode(GL_MODELVIEW);
+            glLoadIdentity();
+            glRotatef(1, 0.0f, 1.0f, 0.0f);
+            glRotatef(1, 1.0f, 0.0f, 0.0f);
+            glTranslatef(Camera.Position.x, Camera.Position.y, Camera.Position.z);
+        
         DoRender();
         
+        glBindVertexArray(VertexArrayObject);
+        glDrawArrays(GL_TRIANGLES, 0, 3 );
         
         SDL_GL_SwapWindow(Window);
     }

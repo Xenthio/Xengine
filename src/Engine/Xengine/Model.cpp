@@ -23,7 +23,7 @@ Model* Model::Load(std::string File)
     FILE * file = fopen(File.c_str(), "r");
     if( file == NULL ){
         printf("Impossible to open the file !\n");
-        return newModel;
+        return new Model(newMesh);
     }
     while( 1 ){
         

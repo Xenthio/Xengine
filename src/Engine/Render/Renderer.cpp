@@ -31,6 +31,5 @@ bool DoRender() {
     glBufferData(GL_ARRAY_BUFFER, mdl->Mesh->Vertices.size() * sizeof(glm::vec3), &mdl->Mesh->Vertices[0], GL_STATIC_DRAW);
     
     glColor3f(1.0, 0.0, 0.0); 
-    glDrawArrays(GL_TRIANGLES, 0, mdl->Mesh->Vertices.size() );
     return false;
 }

@@ -14,21 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C927C48A297BC54B001DD1DC"
-               BuildableName = "Xengine"
-               BlueprintName = "Xengine"
-               ReferencedContainer = "container:Xengine.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9FF9EF7297CF930001538FB"
+               BlueprintIdentifier = "C9FF9EF0297CF4E5001538FB"
                BuildableName = "Project"
                BlueprintName = "Project"
                ReferencedContainer = "container:Xengine.xcodeproj">
@@ -49,23 +35,11 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/xenthio/Xengine"
+      useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      viewDebuggingEnabled = "No">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C927C48A297BC54B001DD1DC"
-            BuildableName = "Xengine"
-            BlueprintName = "Xengine"
-            ReferencedContainer = "container:Xengine.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
+      allowLocationSimulation = "YES">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -73,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C927C48A297BC54B001DD1DC"
-            BuildableName = "Xengine"
-            BlueprintName = "Xengine"
+            BlueprintIdentifier = "C9FF9EF0297CF4E5001538FB"
+            BuildableName = "Project"
+            BlueprintName = "Project"
             ReferencedContainer = "container:Xengine.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
