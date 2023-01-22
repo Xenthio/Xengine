@@ -7,10 +7,10 @@
 
 #ifndef CSInterop_h
 #define CSInterop_h
-
+namespace Project {
 class CSMain {
 public:
     static bool OnFrame();
 };
-
+};
 #endif /* CSInterop_h */

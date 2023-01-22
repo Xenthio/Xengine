@@ -58,7 +58,7 @@ int main ()
     
     while (Running)
     {
-        bool a = CSMain::OnFrame();
+        bool a = Project::CSMain::OnFrame();
         if (a == true) {
             
             printf("real");
