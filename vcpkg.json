@@ -1,28 +1,11 @@
 {
-    "name": "mocha",
-    "version-string": "1.0.0",
-    "description": "Mocha game engine",
-    "builtin-baseline": "0d239eb4d32f125c3da90e612096b14a11ef1474",
-    "dependencies": [
-        "fmt",
-        "glm",
-        "glslang",
-        "nethost",
-        "nlohmann-json",
-        {
-            "name": "sdl2",
-            "features": [
-                "vulkan"
-            ]
-        },
-        "sdl2-image",
-        "spdlog",
-        "vulkan-memory-allocator"
-    ],
-    "overrides": [
-        {
-            "name": "fmt",
-            "version": "8.1.1"
-        }
-    ]
+  "name": "Xengine",
+  "version-string": "1.0.0",
+  "description": "Xengine cool engine (cool)",
+  "dependencies": [
+    "sdl2",
+    "sdl2-image",
+    "glew",
+    "glm"
+  ]
 }
