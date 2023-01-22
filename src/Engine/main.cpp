@@ -5,9 +5,10 @@
 #include <SDL2/SDL_opengl.h>
 #include <OpenGl/glu.h>
 #else
-#include <SDL.h>
+#define SDL_MAIN_HANDLED
+#include <SDL2/SDL.h>
 #include <gl/glew.h>
-#include <SDL_opengl.h>
+#include <SDL2/SDL_opengl.h>
 #include <gl/glu.h>
 #endif
 
@@ -15,9 +16,9 @@
 #include <glm/gtc/quaternion.hpp>
 #include <stdio.h>
 #include <string>
-#include "Renderer.hpp"
-#include "Inputs.hpp"
-#include "Project/CSInterop.h"
+#include "Render/Renderer.hpp"
+#include "Render/Inputs.hpp"
+#include "CSInterop.h"
 
 typedef int32_t i32;
 typedef uint32_t u32;
@@ -34,7 +35,7 @@ public:
     glm::quat Rotation;
 };
 
-int main ()
+int main(int argc, char* args[])
 {
     struct SceneCamera Camera = *new struct SceneCamera();
     u32 WindowFlags = SDL_WINDOW_OPENGL;
@@ -58,11 +59,11 @@ int main ()
     
     while (Running)
     {
-        bool a = Project::CSMain::OnFrame();
-        if (a == true) {
+       // bool a = Project::CSMain::OnFrame();
+        //if (a == true) {
             
             printf("real");
-        }
+        //}
         SDL_Event Event;
         while (SDL_PollEvent(&Event))
         {

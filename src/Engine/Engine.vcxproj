@@ -29,7 +29,7 @@
     <ClCompile Include="Xengine\ModelEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\project\csinterop.h" />
+    <ClInclude Include="CSInterop.h" />
     <ClInclude Include="Render\Inputs.hpp" />
     <ClInclude Include="Render\Renderer.hpp" />
     <ClInclude Include="Xengine\Entity.hpp" />
@@ -90,6 +90,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgTriplet>x64-windows</VcpkgTriplet>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>

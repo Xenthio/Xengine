@@ -68,7 +68,7 @@
     <ClInclude Include="Xengine\ModelEntity.hpp">
       <Filter>Source Files\Xengine</Filter>
     </ClInclude>
-    <ClInclude Include="..\project\csinterop.h">
+    <ClInclude Include="CSInterop.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
