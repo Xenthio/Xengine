@@ -11,9 +11,9 @@
 #include <SDL2/SDL_opengl.h>
 #include <OpenGl/glu.h>
 #else
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <gl/glew.h>
-#include <SDL_opengl.h>
+#include <SDL2/SDL_opengl.h>
 #include <gl/glu.h>
 #endif
 

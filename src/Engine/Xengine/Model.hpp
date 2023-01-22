@@ -14,6 +14,7 @@
 #include "Materials.hpp"
 #include "Mesh.hpp"
 
+#include <string>
 
  
 class Model
@@ -25,7 +26,7 @@ public:
         Mesh = mesh;
     }
     Model() {     // Constructor
-        
+        Mesh = new class Mesh();
     }
     
     static Model* Load(std::string File);

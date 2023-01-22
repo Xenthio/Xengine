@@ -5,6 +5,7 @@
 //  Created by Xenthio on 21/1/2023.
 //
 
+#define _CRT_SECURE_NO_DEPRECATE
 #include "Model.hpp"
 #include "Mesh.hpp"
 #include <string>
