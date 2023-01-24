@@ -17,6 +17,9 @@
 #include <glm/gtx/euler_angles.hpp>
 #include <stdio.h>
 #include <string>
+#include<iostream>
+#include<fstream>
+#include<sstream>
 #include "Render/Renderer.hpp"
 #include "Render/Inputs.hpp"
 #include "CSInterop.h"
@@ -68,6 +71,65 @@ int main(int argc, char* args[])
     GLuint UVBuffer = 1;
     glGenBuffers(1, &UVBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, UVBuffer); 
+
+    // LOAD SHADERS //
+
+    std::ifstream in("base/shaders/core.fsh");
+    std::string contents((std::istreambuf_iterator<char>(in)),
+        std::istreambuf_iterator<char>());
+
+    const char* fragShaderSrc = contents.c_str();
+
+
+    std::ifstream in2("base/shaders/core.vsh");
+    std::string contents2((std::istreambuf_iterator<char>(in2)),
+        std::istreambuf_iterator<char>());
+
+    const char* vertShaderSrc = contents2.c_str();
+
+    unsigned int fragShader;
+    fragShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+    glShaderSource(fragShader, 1, &fragShaderSrc, NULL);
+    glCompileShader(fragShader);
+
+    int  success;
+    char infoLog[512];
+    glGetShaderiv(fragShader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        glGetShaderInfoLog(fragShader, 512, NULL, infoLog);
+        std::cout << "ERROR::SHADER::FRAG::COMPILATION_FAILED\n" << infoLog << std::endl;
+    }
+
+    unsigned int vertShader;
+    vertShader = glCreateShader(GL_VERTEX_SHADER);
+
+    glShaderSource(vertShader, 1, &vertShaderSrc, NULL);
+    glCompileShader(vertShader);
+
+    int  success2;
+    char infoLog2[512];
+    glGetShaderiv(vertShader, GL_COMPILE_STATUS, &success2);
+    if (!success2)
+    {
+        glGetShaderInfoLog(vertShader, 512, NULL, infoLog2);
+        std::cout << "ERROR::SHADER::VERT::COMPILATION_FAILED\n" << infoLog2 << std::endl;
+    }
+
+    unsigned int shaderProgram;
+    shaderProgram = glCreateProgram();
+    glAttachShader(shaderProgram, fragShader);
+    //glAttachShader(shaderProgram, vertShader);
+    glLinkProgram(shaderProgram);
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+        std::cout << "ERROR::SHADER::LINK_FAILED\n" << infoLog << std::endl;
+    }
+    // ------------ //
+
+
 
     int MouseX, MouseY;
     int LastMouseX = 0;
@@ -174,6 +236,10 @@ int main(int argc, char* args[])
         glEnableVertexAttribArray(0);
 
 
+        // color attribute
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
+        glEnableVertexAttribArray(1);
+
         //glBindBuffer(GL_ARRAY_BUFFER, UVBuffer);
         //glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
         //glEnableVertexAttribArray(1);
@@ -189,12 +255,15 @@ int main(int argc, char* args[])
         // set camera position and rotation
         glLoadIdentity();
         glm::mat4 view = glm::lookAt(Camera.Position, Camera.Position + Camera.Forward, Camera.up);
+        
         glMultMatrixf(&view[0][0]);
+        //move to shader
         
         // Render, todo iterate thru modelentities and draw them all
         DoRender();
         
         glBindVertexArray(VertexArrayObject);
+        glUseProgram(shaderProgram);
         glDrawArrays(GL_TRIANGLES, 0, 256 );
         
         SDL_GL_SwapWindow(Window);
