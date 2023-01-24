@@ -65,24 +65,30 @@ Model* Model::Load(std::string File)
             newMesh->NormalIndices.push_back(normalIndex[1]);
             newMesh->NormalIndices.push_back(normalIndex[2]);
         }
-        for( unsigned int i=0; i<newMesh->VertexIndices.size(); i++ ){
-
-            // Get the indices of its attributes
-            unsigned int vertexIndex = newMesh->VertexIndices[i];
-            unsigned int uvIndex = newMesh->UVIndices[i];
-            unsigned int normalIndex = newMesh->NormalIndices[i];
-                
-            // Get the attributes thanks to the index
-            glm::vec3 vertex = temp_vertices[ vertexIndex-1 ];
-            glm::vec2 uv = temp_uvs[ uvIndex-1 ];
-            glm::vec3 normal = temp_normals[ normalIndex-1 ];
-            
-            // Put the attributes in buffers
-            newMesh->Vertices.push_back(vertex);
-            newMesh->UVs.push_back(uv);
-            newMesh->Normals.push_back(normal);
-            
+        else {
+            // Probably a comment, eat up the rest of the line
+            char stupidBuffer[1000];
+            fgets(stupidBuffer, 1000, file);
         }
     }
+    for (unsigned int i = 0; i < newMesh->VertexIndices.size(); i++) {
+
+        // Get the indices of its attributes
+        unsigned int vertexIndex = newMesh->VertexIndices[i];
+        unsigned int uvIndex = newMesh->UVIndices[i];
+        unsigned int normalIndex = newMesh->NormalIndices[i];
+
+        // Get the attributes thanks to the index
+        glm::vec3 vertex = temp_vertices[vertexIndex - 1];
+        glm::vec2 uv = temp_uvs[uvIndex - 1];
+        glm::vec3 normal = temp_normals[normalIndex - 1];
+
+        // Put the attributes in buffers
+        newMesh->Vertices.push_back(vertex);
+        newMesh->UVs.push_back(uv);
+        newMesh->Normals.push_back(normal);
+
+    }
+    fclose(file);
     return new Model(newMesh);
 }

@@ -1,0 +1,15 @@
+// ---- Xengine Material Format ----
+// strings treated as files (full path or relative path)
+// ints and floats are treated as grayscale values
+// vec3 is treated as a colour, from 1 to 255
+
+//string albedo = "uvmap.dds";
+//float roughness = 1.0f;
+//int metalness = 0;
+//vec3 normal = vec3(45, 45, 45);
+
+albedo string uvmap.dds
+roughness float 1.0
+metalness int 0
+normal vec3 45 45 45
+
